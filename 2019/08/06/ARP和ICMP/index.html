@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>ARP和ICMP | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ICMP(Internet Control Message Protocol)网络控制消息协议，给ping做网络协议，它是TCP/IP协议簇的一个子协议，用于在IP主机，路由器之间传递控制消息，控制消息是指网络不通，主机是否到达，路由是否可用等网络本身的消息，这些控制消息虽然并不传输用户数据，但是对用户数据的传递起着重要的作用。ARP(Address Resolution Protocol)地址解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ARP和ICMP">
+<meta property="og:url" content="http://yoursite.com/2019/08/06/ARP和ICMP/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="ICMP(Internet Control Message Protocol)网络控制消息协议，给ping做网络协议，它是TCP/IP协议簇的一个子协议，用于在IP主机，路由器之间传递控制消息，控制消息是指网络不通，主机是否到达，路由是否可用等网络本身的消息，这些控制消息虽然并不传输用户数据，但是对用户数据的传递起着重要的作用。ARP(Address Resolution Protocol)地址解">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-06T09:01:43.386Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ARP和ICMP">
+<meta name="twitter:description" content="ICMP(Internet Control Message Protocol)网络控制消息协议，给ping做网络协议，它是TCP/IP协议簇的一个子协议，用于在IP主机，路由器之间传递控制消息，控制消息是指网络不通，主机是否到达，路由是否可用等网络本身的消息，这些控制消息虽然并不传输用户数据，但是对用户数据的传递起着重要的作用。ARP(Address Resolution Protocol)地址解">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-ARP和ICMP" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/06/ARP和ICMP/" class="article-date">
+  <time datetime="2019-08-06T08:30:33.000Z" itemprop="datePublished">2019-08-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ARP和ICMP
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>ICMP(Internet Control Message Protocol)</strong>网络控制消息协议，<strong>给ping做网络协议</strong>，它是TCP/IP协议簇的一个子协议，用于在IP主机，路由器之间传递控制消息，控制消息是指网络不通，主机是否到达，路由是否可用等网络本身的消息，这些控制消息虽然并不传输用户数据，但是对用户数据的传递起着重要的作用。<br><strong>ARP(Address Resolution Protocol)</strong>地址解析协议，是根据ip地址获取物理地址的一个TCP/IP协议。<br><strong>APR工作原理：</strong>发送端在与接收端进行数据通信之前需要知道对端MAC地址，而首次通信前发送端不知道接收端的MAC地址，所以要发送一个MAC地址请求包（ARP请求包），该请求包包含发送端的MAC地址及发送端和接收端的IP地址，经由交换设备，换发给接收端。</p>
+<p>交换机在接受到该请求包后，会检测包中含的目标地址信息，但目标MAC地址不可用，而IP地址不识别[^RUNOOB]交换设备属于二层设备（代表数据链路层和物理层）只支持MAC地址看不懂IP地址，所以交换设备不包含ARP列表，故交换设备会分发该请求包，非目标地址的设备会主动丢弃该请求包，接收端收到请求包后会将自身的MAC地址写入到该请求包并返回给发送端。数据包经由交换设备发送给原发送端，因数据包中含原发送端的MAC地址，所以会直接转发给原发送端。</p>
+<p>原发送端收到包含接收端MAC地址的请求包后会写入到本地的ARP列表中，以备下次使用。再次通信时，发送端会直接查找ARP列表[^RONOOB]MAC与IP地址对应列表，如果包含对端的MAC地址则直接调用，如不包含则重新开始执行ARP请求的过程。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/06/ARP和ICMP/" data-id="cjyzlhxuj000055y1jp0g6xgi" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/06/网络OSI七层模型-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">网络OSI七层模型</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/08/06/ARP和ICMP/">ARP和ICMP</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/06/网络OSI七层模型-1/">网络OSI七层模型</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/06/happy/">happy</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/06/网络OSI七层模型/">网络OSI七层模型</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/03/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
