@@ -85,13 +85,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>ICMP(Internet Control Message Protocol)</strong>网络控制消息协议，<strong>给ping做网络协议</strong>，它是TCP/IP协议簇的一个子协议，用于在IP主机，路由器之间传递控制消息，控制消息是指网络不通，主机是否到达，路由是否可用等网络本身的消息，这些控制消息虽然并不传输用户数据，但是对用户数据的传递起着重要的作用。<br><strong>ARP(Address Resolution Protocol)</strong>地址解析协议，是根据ip地址获取物理地址的一个TCP/IP协议。<br><strong>APR工作原理：</strong>发送端在与接收端进行数据通信之前需要知道对端MAC地址，而首次通信前发送端不知道接收端的MAC地址，所以要发送一个MAC地址请求包（ARP请求包），该请求包包含发送端的MAC地址及发送端和接收端的IP地址，经由交换设备，换发给接收端。</p>
-<p>交换机在接受到该请求包后，会检测包中含的目标地址信息，但目标MAC地址不可用，而IP地址不识别[^RUNOOB]:交换设备属于二层设备（代表数据链路层和物理层）只支持MAC地址看不懂IP地址，所以交换设备不包含ARP列表，故交换设备会分发该请求包，非目标地址的设备会主动丢弃该请求包，接收端收到请求包后会将自身的MAC地址写入到该请求包并返回给发送端。数据包经由交换设备发送给原发送端，因数据包中含原发送端的MAC地址，所以会直接转发给原发送端。</p>
-<p>原发送端收到包含接收端MAC地址的请求包后会写入到本地的ARP列表中，以备下次使用。再次通信时，发送端会直接查找ARP列表[^RONOOB]:MAC与IP地址对应列表，如果包含对端的MAC地址则直接调用，如不包含则重新开始执行ARP请求的过程。</p>
+<p>交换机在接受到该请求包后，会检测包中含的目标地址信息，但目标MAC地址不可用，而IP地址不识别[^交换设备属于二层设备（代表数据链路层和物理层）只支持MAC地址看不懂IP地址，所以交换设备不包含ARP列表]，故交换设备会分发该请求包，非目标地址的设备会主动丢弃该请求包，接收端收到请求包后会将自身的MAC地址写入到该请求包并返回给发送端。数据包经由交换设备发送给原发送端，因数据包中含原发送端的MAC地址，所以会直接转发给原发送端。</p>
+<p>原发送端收到包含接收端MAC地址的请求包后会写入到本地的ARP列表中，以备下次使用。再次通信时，发送端会直接查找ARP列表[^MAC与IP地址对应列表，如果包含对端的MAC地址则直接调用，如不包含则重新开始执行ARP请求的过程。],如果包含对端MAC地址则直接调用，如不包含则重新开始执行ARP请求的过程。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/06/ARP和ICMP/" data-id="cjyzlkgjr00006gy1szmzdzsg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/06/ARP和ICMP/" data-id="cjyzls96f000086y1y1blsiec" class="article-share-link">Share</a>
       
       
     </footer>
@@ -129,7 +129,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/06/网络OSI七层模型-1/" data-id="cjyzlkgk600036gy1furikj2n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/06/网络OSI七层模型-1/" data-id="cjyzls96r000386y1uoiph9dy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -165,7 +165,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/06/happy/" data-id="cjyzlkgk100016gy16l1sj0vg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/06/happy/" data-id="cjyzls96m000186y177mkpx7x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -209,7 +209,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/06/网络OSI七层模型/" data-id="cjyzlkgk700046gy1loaptsi4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/06/网络OSI七层模型/" data-id="cjyzls96t000486y1zcc1vewc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -258,7 +258,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/03/hello-world/" data-id="cjyzlkgk400026gy1oonswrdr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/03/hello-world/" data-id="cjyzls96p000286y186140188" class="article-share-link">Share</a>
       
       
     </footer>
