@@ -62,6 +62,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-VMware-Tools安装" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/07/VMware-Tools安装/" class="article-date">
+  <time datetime="2019-08-07T01:22:58.000Z" itemprop="datePublished">2019-08-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/07/VMware-Tools安装/">VMware Tools安装</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>首先先下载VMware Tool,下载好之后界面下面会出现“ 在客户机中装载CD驱动器启动终端，使用tar解压缩安装程序，然后执行vmware-install.pl安装VMware-Tools”的字样</strong></p>
+<p>#解决方法：</p>
+<ol>
+<li>进入文件界面，找到左侧“设备”下面名为“VM Tools”的驱动器，进入该CD驱动器中，找到文件名末尾为.tar.gz的文件。</li>
+<li>将末尾为》.tar.gz的文件拷贝到其它任意的文件夹，我直接拷贝到了桌面上，然后将该文件解压，解压的方法有两种，（1）直接右键点击该文件，选择“提取到此处”选项。（2）进入命令行界面，使用tar指令解压，（解压.tar.gz类型的文件用tar -xzf filename）解压后文件名为vmware-tools-distrib。</li>
+<li>进入命令行界面，cd vmware-tools-distrib;然后输入指令：sudo ./vmware-install.pl；下载过程中会出现很多询问的问题，只需要不断ENTER就可以了 。最后最下方会出现Enjoy， – the VMware team 就成功了。</li>
+<li>重起系统，就能正常使用了。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/07/VMware-Tools安装/" data-id="cjz0n87wk0002a3y1wn9efgzj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-VLAN-虚拟局域网" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/06/VLAN-虚拟局域网/" class="article-date">
@@ -92,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/06/VLAN-虚拟局域网/" data-id="cjz0khdpz0001wfy10fzwt41h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/06/VLAN-虚拟局域网/" data-id="cjz0n87wh0001a3y18bn7tll6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -132,7 +176,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/06/ARP和ICMP/" data-id="cjz0khdpk0000wfy1p6rl05h9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/06/ARP和ICMP/" data-id="cjz0n87w80000a3y1ovlnihsj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -170,7 +214,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/06/网络OSI七层模型-1/" data-id="cjz0khdq10002wfy14ydtw7tc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/06/网络OSI七层模型-1/" data-id="cjz0n87wp0004a3y1kazz33io" class="article-share-link">Share</a>
       
       
     </footer>
@@ -219,7 +263,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/03/hello-world/" data-id="cjz0khdq20003wfy1fnegsmld" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/03/hello-world/" data-id="cjz0n87wm0003a3y15dcqfzvc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -258,6 +302,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/08/07/VMware-Tools安装/">VMware Tools安装</a>
+          </li>
         
           <li>
             <a href="/2019/08/06/VLAN-虚拟局域网/">VLAN 虚拟局域网</a>
